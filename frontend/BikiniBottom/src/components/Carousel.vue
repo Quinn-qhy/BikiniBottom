@@ -19,6 +19,7 @@ const startAutoPlay = () => {
   }, 5000); // 每 5 秒切换一次
 };
 
+// 停止自动轮播
 const stopAutoPlay = () => {
   clearInterval(timer);
 };
@@ -42,6 +43,7 @@ onMounted(() => {
   startAutoPlay();
 });
 
+// 组件卸载时清除定时器
 onBeforeUnmount(() => {
   stopAutoPlay();
 });

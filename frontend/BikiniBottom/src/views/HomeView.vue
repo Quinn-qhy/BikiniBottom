@@ -16,7 +16,6 @@ import Carousel from '@/components/Carousel.vue'
 </template>
 
 <style scoped>
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -26,5 +25,11 @@ import Carousel from '@/components/Carousel.vue'
 .intro {
   max-width: 45%;
   margin-left: 40px;
+  color: black;
+}
+
+#home-carousel {
+  max-width: 60%;
+  margin-right: 40px;
 }
 </style>

@@ -1,24 +1,28 @@
-<!-- 根组件 -->
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import NavBar from '@/components/NavBar.vue'
+
+// 导入背景图片
+import bg from '@/assets/images/home_bg.jpg'
 </script>
 
 <template>
-  <!-- 顶部导航栏 -->
-  <NavBar />
-  <!-- 路由出口 -->
-  <RouterView id="home-view" />
+  <div id="app" :style="{ backgroundImage: `url(${bg})` }">
+    <NavBar />
+    <RouterView />
+  </div>
 </template>
 
 <style>
-/* 根容器样式 */
 #app {
   width: 100%;
   min-width: 100vw;
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  display: block; /* 确保子元素不被 flex 居中 */
+  display: block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>

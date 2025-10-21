@@ -1,35 +1,39 @@
 <template>
   <nav class="navbar">
     <div class="logo">
-        <!-- put logo image here -->
+      <!-- put logo image here -->
+      <RouterLink to="/">
         <img src="@/assets/images/logo.jpg" alt="Logo" />
+      </RouterLink>
     </div>
 
     <ul class="nav-links">
+      <!-- 遍历器循环导航项 -->
       <li v-for="(item, index) in navItems" :key="index">
         <!-- 用vue的方式放超链接 -->
-         <RouterLink :to="item.href">{{ item.label }}</RouterLink>
+        <RouterLink :to="item.href">{{ item.label }}</RouterLink>
       </li>
     </ul>
-    <ul class="nav-links" style="margin-left:auto;">
+    <ul class="nav-links" style="margin-left: auto">
       <li v-for="(item, index) in rightItems" :key="index">
         <RouterLink :to="item.href">{{ item.label }}</RouterLink>
-      </li> 
+      </li>
     </ul>
   </nav>
 </template>
 
 <script setup>
+// 导航栏项目
 const navItems = [
-  { label: '首页', href: '#' },
+  { label: '首页', href: '/' },
   { label: '角色', href: '#' },
   { label: '产品', href: '#' },
   { label: '关于我们', href: '#' },
-  { label: '联系我们', href: '#' }
+  { label: '联系我们', href: '#' },
 ]
 const rightItems = [
   { label: '购物车', href: '#' },
-  { label: '登录', href: '#' }
+  { label: '登录', href: '/login' },
 ]
 </script>
 
@@ -42,7 +46,7 @@ const rightItems = [
   align-items: center;
 }
 .navbar {
-  width: 100%;       /* 确保撑满屏幕 */
+  width: 100%; /* 确保撑满屏幕 */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -58,14 +62,13 @@ const rightItems = [
   border-bottom-right-radius: 15px;
 }
 
-
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;           /* 每个链接间距 */
+  gap: 30px; /* 每个链接间距 */
   margin-left: 20px;
   padding: 0;
-  white-space: nowrap;  /* 保证一行显示 */
+  white-space: nowrap; /* 保证一行显示 */
 }
 
 .nav-links li a {
@@ -76,8 +79,8 @@ const rightItems = [
 }
 
 .nav-links li a:hover {
-  border-bottom: 2px solid rgb(251, 215, 55);
-  background-color: rgb(251, 215, 55);
+  border-bottom: 2px solid #fbd737;
+  background-color: #fbd737;
   /* 圆角 */
   border-radius: 5px;
 }
